@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindos ao Nosso País das Maravilhas</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        .intro {
+            font-size: 2em;
+            opacity: 0;
+            animation: fadeIn 3s forwards;
+        }
+        .enter-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            display: none; /* Mostra só se o redirecionamento automático falhar */
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="intro">Bem-vindos ao Nosso País das Maravilhas</div>
+        <button class="enter-button" id="enterButton" onclick="redirectToSite()">Entrar</button>
+    </div>
+
+    <script>
+        function redirectToSite() {
+            window.location.href = "https://noivos.casar.com/helenapaulo";
+        }
+
+        setTimeout(function() {
+            try {
+                // Tenta redirecionar automaticamente
+                redirectToSite();
+            } catch (error) {
+                // Se o redirecionamento automático falhar, mostra o botão "Entrar"
+                document.getElementById('enterButton').style.display = 'block';
+            }
+        }, 3000); // Ajuste o tempo para a duração da animação
+    </script>
+</body>
+</html>
